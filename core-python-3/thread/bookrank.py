@@ -23,21 +23,24 @@ ISBNs = {
     '21063086': u'Python 学习手册'
 }
 
+
 def _getRanking(isbn):
     bookDict = {}
     # TODO 参数可用 str.format() 方法： '{0}{1}'.format(*args)
     ajax = uopen('http://product.dangdang.com/index.php?r=callback/get-bang-rank&productId=%s' % isbn)
     rank = eval(ajax.read())["data"]
-    typeName = rank['pathName'].decode('unicode-escape')
-    bookDict['type'] = REGEX.sub('', typeName)
+    type_name = rank['pathName'].decode('unicode-escape')
+    bookDict['type'] = REGEX.sub('', type_name)
     bookDict['rank'] = rank['rank']
     ajax.close()
     return bookDict
     # return REGEX.findall('\d+', str(span))[0]
 
+
 def _showRanking(isbn):
     dictObj = _getRanking(isbn)
     print '- %s 在 %s 中排名：%s' % (ISBNs[isbn], dictObj["type"], dictObj["rank"])
+
 
 def _main():
     print 'At', ctime(), 'on dangdang...'
