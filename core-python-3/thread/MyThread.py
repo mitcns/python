@@ -3,7 +3,7 @@
 
 import threading
 from time import sleep, ctime
-
+lock = threading.Lock()
 class MyThread(threading.Thread):
 
     def __init__(self, func, args, name=''):
@@ -17,6 +17,8 @@ class MyThread(threading.Thread):
         return self.res
 
     def run(self):
+        lock.acquire()
         print 'starting', self.name, 'at:', ctime()
+        lock.release()
         self.res = self.func(*self.args)
         print self.name, 'finished at:', ctime()
