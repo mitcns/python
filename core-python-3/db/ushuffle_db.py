@@ -161,7 +161,7 @@ def main():
     printf('\n*** Creating users table')
     create(cur)
 
-    printf('Insedrting names into table')
+    printf('Inserting names into table')
     insert(cur, db)
     dbDump(cur)
 
