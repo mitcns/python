@@ -41,6 +41,7 @@ class SQLAlchemyTest(object):
         self.users = Users.__table__
         self.eng = self.users.metadata.bind = eng
 
+
     def insert(self):
         self.ses.add_all(Users(login=who, userid=userid, projid=rand(1, 5)) for who, userid in randName())
         self.ses.commit()
