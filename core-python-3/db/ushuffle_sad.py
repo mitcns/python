@@ -26,7 +26,7 @@ class Users(Base):
 class SQLAlchemyTest(object):
     def __init__(self, dsn):
         try:
-            eng = create_engine(dsn, echo=True)
+            eng = create_engine(dsn)
         except ImportError:
             raise RuntimeError()
         try:
