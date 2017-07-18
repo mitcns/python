@@ -21,6 +21,7 @@ from myblog import views, urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include(urls)),
+    url(r'^', include(urls)),
     # url(r'^blog/', include('myblog.urls')),
     # url(r'^blog/', views.myblog)
 ]

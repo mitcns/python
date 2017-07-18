@@ -6,7 +6,8 @@ import views
 
 
 urlpatterns = [
+    url(r'^$', views.index),
     url(r'^list/', views.myblog, name='blog'),
-    url(r'^index/', views.index, name='index'),
+    url(r'^index/' or r'^$', views.index, name='index'),
     url(r'^create/', views.create_model_form, name='create')
 ]
