@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 # Create your models here.
 from django.db import models
+from django import forms
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=150)
@@ -11,4 +12,9 @@ class BlogPost(models.Model):
 
     class Meta:
         ordering = ('-timestamp',)
+
+class BlogPostForm(forms.ModelForm):
+    class Meta:
+        model = BlogPost
+        exclude = ('timestamp'),
 
