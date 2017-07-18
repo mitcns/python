@@ -9,3 +9,6 @@ class BlogPost(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField()
 
+    class Meta:
+        ordering = ('-timestamp',)
+
