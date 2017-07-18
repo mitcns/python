@@ -8,4 +8,5 @@ import views
 urlpatterns = [
     url(r'^list/', views.myblog, name='blog'),
     url(r'^index/', views.index, name='index'),
+    url(r'^create/', views.create_from, name='create')
 ]
