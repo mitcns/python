@@ -22,10 +22,8 @@ def chooseCave():
     while cave != '1' and cave != '2':
         print '你想进哪个洞穴寻宝（1 or 2）？'
         cave = raw_input().strip()
-        if cave != '1' and cave != '2':
-            print '请选择正确地洞穴！'
-            chooseCave()
-        return cave
+
+    return cave
 
 def checkCave(chosenCave):
     print '你来到了洞穴...'
