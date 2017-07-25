@@ -56,5 +56,5 @@ while playAgain == 'yes' or playAgain == 'y':
     checkCave(caveNumber)
 
     print ('重新开始游戏？（yes or no）')
-    
+
     playAgain = raw_input().strip()
